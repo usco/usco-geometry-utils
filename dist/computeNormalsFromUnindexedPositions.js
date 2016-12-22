@@ -11,6 +11,14 @@ var _glVec2 = _interopRequireDefault(_glVec);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * center the geometry of an object around the zero of the given axes
+ * WARNING ! this mutates the original geometric data !
+ * @param  {Object} geometry object containing positions data (flat array, flat typed array)
+ * @param  {String} bounds the current bounds of the entity
+ * @param  {String} axes on which axes to apply the transformation (default: [0, 0, 1])
+ * @return {Object}      the modified geometry, centered
+ */
 function computeNormalsFromUnindexedPositions(positions) {
   var normals = new Float32Array(positions.length);
   var pointA = void 0;

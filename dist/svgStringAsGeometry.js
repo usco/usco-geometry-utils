@@ -13,11 +13,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var parsePath = require('extract-svg-path').parse;
 
-function svgStringAsGeometry(svgString) {
-  var svgPath = parsePath(svgString);
-  var logoMesh = (0, _svgMesh3d2.default)(svgPath, {
+function svgStringAsGeometry(svgString, options) {
+  var defaults = {
     delaunay: true,
-    scale: 1
-  });
+    scale: 1,
+    clean: true
+  };
+  options = Object.assign({}, defaults, options);
+  var svgPath = parsePath(svgString);
+  var logoMesh = (0, _svgMesh3d2.default)(svgPath, options);
   return logoMesh;
 }
