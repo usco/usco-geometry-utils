@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "ava './test/**/*.test.js' --require babel-register --verbose",
+    "test": "ava './src/**/*.test.js' --require babel-register --verbose",
     "build": "babel src/ -d dist",
     "watch": "watchify src/main -o dist/index.js -t [ babelify]"
   },
