@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
+  "module":"src/index.js",
   "scripts": {
     "test": "ava './src/**/*.test.js' --require babel-register --verbose",
     "build": "babel src/ -d dist",
